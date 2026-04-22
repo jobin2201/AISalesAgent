@@ -1,0 +1,147 @@
+<section id="customerSection" class="app-section d-none">
+  <div class="card shadow-sm customer-shell-card">
+    <div class="card-body customer-shell-body">
+      <div class="customer-hero mb-3">
+        <p class="customer-kicker mb-1">Customer Mailbox Reply</p>
+        <h5 class="customer-title mb-1">Understand fast, compose confidently</h5>
+        <p class="customer-subtitle mb-0">Gmail-style workspace: inspect sender email on the left and draft customer response on the right.</p>
+      </div>
+
+      <div class="customer-meta-grid mb-3">
+        <div class="customer-meta-card">
+          <div class="customer-meta-label">Sender Mailbox</div>
+          <div id="customerMetaSender" class="customer-meta-value">-</div>
+        </div>
+        <div class="customer-meta-card">
+          <div class="customer-meta-label">Customer Mailbox</div>
+          <div id="customerMetaCustomer" class="customer-meta-value">-</div>
+        </div>
+        <div class="customer-meta-card">
+          <div class="customer-meta-label">Lead</div>
+          <div id="customerMetaLead" class="customer-meta-value">-</div>
+        </div>
+      </div>
+
+      <div class="row g-3 customer-main-grid">
+        <div class="col-xl-5">
+          <div class="customer-pane h-100">
+            <div class="customer-step">Step 1: Review latest sender email context</div>
+            <div class="customer-pane-title">Sender Email Snapshot</div>
+            <div class="customer-snapshot-grid mt-2">
+              <div><span class="snapshot-label">From</span><span id="customerCtxFrom" class="snapshot-value">-</span></div>
+              <div><span class="snapshot-label">To</span><span id="customerCtxTo" class="snapshot-value">-</span></div>
+              <div><span class="snapshot-label">Subject</span><span id="customerCtxSubject" class="snapshot-value">-</span></div>
+              <div><span class="snapshot-label">Thread</span><span id="customerCtxThread" class="snapshot-value">-</span></div>
+            </div>
+            <label class="form-label mt-3">Latest Message</label>
+            <textarea id="customerSenderBody" class="form-control customer-message-preview" rows="14" readonly></textarea>
+          </div>
+        </div>
+
+        <div class="col-xl-7">
+          <div class="customer-pane h-100">
+            <div class="customer-step">Step 2: Pick reply path and refine draft details</div>
+            <div class="customer-pane-title">Reply Composer</div>
+
+            <div class="d-flex flex-wrap gap-3 mt-2 mb-2 customer-mode-wrap">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="customerReplyMode" id="customerModeGuided" value="guided" checked>
+                <label class="form-check-label" for="customerModeGuided">Guided flow</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="customerReplyMode" id="customerModeManual" value="manual">
+                <label class="form-check-label" for="customerModeManual">Manual reply</label>
+              </div>
+            </div>
+
+            <div class="row g-3 align-items-end">
+              <div class="col-md-5">
+                <label class="form-label">Choose reply path</label>
+                <select id="customerIntent" class="form-select">
+                  <option value="accept">accept</option>
+                  <option value="postpone">postpone</option>
+                  <option value="decline">decline</option>
+                  <option value="pricing_question">pricing_question</option>
+                  <option value="need_clarity" selected>need_clarity</option>
+                  <option value="thank_you_close">thank_you_close</option>
+                  <option value="not_interested">not_interested</option>
+                </select>
+              </div>
+              <div class="col-md-7">
+                <div id="customerFlowDescription" class="customer-flow-description">Pick a path to generate a tailored draft.</div>
+              </div>
+            </div>
+
+            <div id="customerSchedulingBox" class="customer-scheduling-box d-none mt-3">
+              <div class="customer-scheduling-title">Scheduling Inputs</div>
+              <div class="row g-3 align-items-end">
+                <div class="col-md-12">
+                  <label class="form-label">Pick preferred slot</label>
+                  <select id="customerSlotSelect" class="form-select"></select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Preferred duration (minutes)</label>
+                  <select id="customerDurationSelect" class="form-select">
+                    <option value="15">15</option>
+                    <option value="30" selected>30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="120">120</option>
+                    <option value="180">180</option>
+                  </select>
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label">Pick start time inside selected slot</label>
+                  <select id="customerSlotStartSelect" class="form-select"></select>
+                </div>
+              </div>
+            </div>
+
+            <details id="customerCalendarDetails" class="customer-calendar-details mt-3 d-none">
+              <summary>Live sender calendar availability</summary>
+              <pre id="customerCalendarText" class="customer-calendar-pre"></pre>
+            </details>
+
+            <div class="customer-divider my-3"></div>
+
+            <div class="customer-step">Step 3: Finalize subject/body and draft to Gmail</div>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Reply Subject</label>
+                <input id="customerDraftSubject" class="form-control" placeholder="Re: ...">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Reply Body</label>
+                <textarea id="customerDraftBody" class="form-control" rows="10"></textarea>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <button id="btnGenerateCustomerTemplate" class="btn btn-primary">Generate Template</button>
+              <button id="btnCustomerResetDraft" class="btn btn-outline-secondary">Reset Draft</button>
+              <button id="btnDraftCustomerReply" class="btn btn-success">Draft In Customer Gmail</button>
+            </div>
+
+            <div class="mt-3">
+              <label class="form-label">Sender Subject</label>
+              <input id="customerSenderSubject" class="form-control" placeholder="Re: Quick follow-up">
+            </div>
+            <div class="row g-3 mt-1">
+              <div class="col-md-6">
+                <label class="form-label">Thread ID</label>
+                <input id="customerThreadId" class="form-control" placeholder="gmail_thread_id">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Sender Email</label>
+                <input id="customerSenderAddr" class="form-control" placeholder="sender mailbox">
+              </div>
+            </div>
+
+            <div class="col-12 mt-3"><div id="customerActionStatus" class="small text-muted"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

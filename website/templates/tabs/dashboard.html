@@ -1,0 +1,92 @@
+<section id="dashboardSection" class="app-section">
+  <div class="dashboard-hero card border-0">
+    <div class="card-body py-4 px-4 px-lg-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="dashboard-kicker mb-2">Lead Intelligence Hub</p>
+          <h2 class="dashboard-title mb-2">Lead Dashboard</h2>
+          <p class="dashboard-subtitle mb-0">Track high-intent accounts, apply fast filters, and jump directly into outreach flows.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="dashboard-hero-actions d-flex flex-wrap gap-2 justify-content-lg-end">
+            <button id="btnQuickHighScore" class="btn btn-light btn-sm">High Score (75+)</button>
+            <button id="btnQuickAllPriority" class="btn btn-outline-light btn-sm">All Priorities</button>
+            <button id="btnDashboardReset" class="btn btn-outline-light btn-sm">Reset Filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mt-1" id="metricCards"></div>
+
+  <div class="card dashboard-filter-card shadow-sm mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">Smart Filters</h5>
+        <button id="btnLoadLeads" class="btn btn-primary btn-sm">Apply Filters</button>
+      </div>
+      <div class="row g-3 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label">Product</label>
+          <select id="filterProduct" class="form-select"></select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Priority</label>
+          <select id="filterPriority" class="form-select">
+            <option value="">All Priorities</option>
+            <option value="HIGH" selected>HIGH</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="LOW">LOW</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Min Score</label>
+          <input id="filterMinScore" type="number" min="0" max="100" value="0" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Company Search</label>
+          <input id="filterQuery" type="text" class="form-control" placeholder="Search company, product, or industry">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mt-1">
+    <div class="col-xl-8">
+      <div class="card shadow-sm dashboard-table-card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Lead List</h5>
+            <span id="leadCountBadge" class="badge text-bg-primary">0 leads</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle" id="leadsTable">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Product</th>
+                  <th>Industry</th>
+                  <th>Priority</th>
+                  <th>Score</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card shadow-sm dashboard-insight-card h-100">
+        <div class="card-body">
+          <h5 class="mb-3">Selection Insight</h5>
+          <div id="dashboardInsightPanel" class="text-muted">
+            Select a lead from the table to preview quick insight and open full Lead Overview.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

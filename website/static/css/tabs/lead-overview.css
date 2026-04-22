@@ -1,0 +1,381 @@
+.lead-overview-shell {
+  animation: leadOverviewIn 0.45s ease-out both;
+}
+
+.lead-profile-card,
+.lead-about-card,
+.lead-linkedin-card,
+.lead-contacts-card,
+.lead-conversations-card {
+  border: 1px solid rgba(18, 38, 63, 0.1);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(18, 38, 63, 0.08);
+}
+
+.lead-profile-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.lead-profile-top {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.lead-avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  padding: 3px;
+  background: linear-gradient(145deg, #cae3ff, #e8f2ff);
+}
+
+.lead-identity h5 {
+  color: #16375b;
+}
+
+.lead-profile-card .avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  border: 3px solid #d8e9ff;
+  object-fit: cover;
+}
+
+.lead-stat-chip {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.lead-chip-priority {
+  background: #e8f1ff;
+  color: #174a82;
+}
+
+.lead-chip-score {
+  background: #e8fff5;
+  color: #0f6f4f;
+}
+
+.lead-chip-meeting {
+  background: #fff5e8;
+  color: #9a5a00;
+}
+
+.lead-chip-meeting-booked {
+  background: #e8fff4;
+  color: #126446;
+}
+
+.lead-chip-meeting-past {
+  background: #f2f4f8;
+  color: #4d5b6a;
+}
+
+.lead-kpi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meeting-state-box {
+  border-radius: 12px;
+  border: 1px solid rgba(18, 38, 63, 0.12);
+  padding: 10px 11px;
+  background: #f8fbff;
+}
+
+.meeting-state-booked {
+  background: linear-gradient(180deg, #ecfff6 0%, #e6fff2 100%);
+  border-color: rgba(18, 100, 70, 0.2);
+}
+
+.meeting-state-past {
+  background: linear-gradient(180deg, #f5f7fa 0%, #eef2f6 100%);
+  border-color: rgba(77, 91, 106, 0.18);
+}
+
+.meeting-state-default {
+  background: linear-gradient(180deg, #fff8ef 0%, #fff4e4 100%);
+  border-color: rgba(154, 90, 0, 0.18);
+}
+
+.meeting-state-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #58708a;
+  font-weight: 700;
+}
+
+.meeting-state-value {
+  font-weight: 700;
+  color: #143b63;
+  margin-top: 1px;
+}
+
+.meeting-state-detail {
+  font-size: 0.82rem;
+  color: #4e6783;
+  margin-top: 2px;
+}
+
+.lead-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.lead-mini-item {
+  border: 1px solid rgba(18, 38, 63, 0.1);
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 8px 10px;
+}
+
+.mini-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #66829d;
+  font-weight: 700;
+}
+
+.mini-value {
+  margin-top: 1px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f3d5a;
+}
+
+.lead-section-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #55718d;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.lead-body-text {
+  color: #11273f;
+}
+
+.lead-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #edf5ff;
+  color: #174a82;
+  text-decoration: none;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lead-link-item:hover {
+  transform: translateY(-1px);
+  background: #dbeaff;
+}
+
+.sender-contact-pill {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #eef3f8;
+  color: #1f3d5a;
+  font-size: 0.8rem;
+  margin: 0 6px 6px 0;
+}
+
+.thread-group-card {
+  border: 1px solid rgba(17, 39, 63, 0.12);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  overflow: hidden;
+  animation: threadCardIn 0.28s ease both;
+}
+
+.thread-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #edf5ff;
+  border-bottom: 1px solid rgba(17, 39, 63, 0.08);
+}
+
+.thread-toggle-btn {
+  width: 100%;
+  border: 0;
+  background: #edf5ff;
+  display: grid;
+  grid-template-columns: 20px minmax(140px, 1fr) minmax(220px, 1.6fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(17, 39, 63, 0.08);
+}
+
+.thread-toggle-btn:hover {
+  background: #e7f1ff;
+}
+
+.thread-toggle-btn[aria-expanded="true"] .thread-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+.thread-toggle-arrow {
+  font-size: 0.82rem;
+  color: #335a87;
+  transition: transform 0.2s ease;
+}
+
+.thread-toggle-main {
+  display: grid;
+  gap: 2px;
+}
+
+.thread-company {
+  font-size: 0.76rem;
+  color: #587493;
+}
+
+.thread-toggle-meta {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+}
+
+.thread-subject-inline {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #244568;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thread-date-inline {
+  font-size: 0.75rem;
+  color: #5f7590;
+}
+
+.thread-panel[hidden] {
+  display: none;
+}
+
+.thread-customer {
+  font-weight: 700;
+  color: #173f71;
+}
+
+.thread-id {
+  font-size: 0.78rem;
+  color: #4f6b86;
+}
+
+.thread-msg-list {
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.thread-msg {
+  border-radius: 10px;
+  padding: 9px 10px;
+  border: 1px solid rgba(17, 39, 63, 0.08);
+}
+
+.thread-msg.msg-sender {
+  background: #eaf3ff;
+}
+
+.thread-msg.msg-customer {
+  background: #f5f9ff;
+}
+
+.thread-msg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.thread-role {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #1f4f86;
+}
+
+.thread-time {
+  font-size: 0.76rem;
+  color: #5f7590;
+}
+
+.thread-subject {
+  font-weight: 600;
+  color: #173653;
+  margin-bottom: 2px;
+}
+
+.thread-body {
+  color: #294660;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 767.98px) {
+  .lead-profile-top {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .lead-avatar-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
+  .thread-toggle-btn {
+    grid-template-columns: 18px 1fr;
+  }
+
+  .thread-toggle-meta {
+    grid-column: 1 / -1;
+    justify-items: start;
+    margin-left: 28px;
+  }
+}
+
+@keyframes threadCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leadOverviewIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

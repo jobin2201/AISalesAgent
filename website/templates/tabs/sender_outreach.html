@@ -1,0 +1,74 @@
+<section id="senderOutreachSection" class="app-section d-none">
+  <div class="card shadow-sm outreach-shell-card">
+    <div class="card-body outreach-shell-body">
+      <div class="outreach-hero mb-3">
+        <p class="outreach-kicker mb-1">Sender Outreach Workspace</p>
+        <h5 class="outreach-title mb-1">Compose and dispatch first-touch outreach</h5>
+        <p class="outreach-subtitle mb-0">Select stored template context, finalize recipient and content, then create outreach draft/send action.</p>
+      </div>
+
+      <div class="outreach-meta-grid mb-3">
+        <div class="outreach-meta-card">
+          <div class="outreach-meta-label">Lead</div>
+          <div id="outreachMetaLead" class="outreach-meta-value">-</div>
+        </div>
+        <div class="outreach-meta-card">
+          <div class="outreach-meta-label">Product</div>
+          <div id="outreachMetaProduct" class="outreach-meta-value">-</div>
+        </div>
+        <div class="outreach-meta-card">
+          <div class="outreach-meta-label">Website</div>
+          <div id="outreachMetaWebsite" class="outreach-meta-value">-</div>
+        </div>
+      </div>
+
+      <div class="outreach-pane">
+        <div class="outreach-step">Step 1: Choose stored email template</div>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-8">
+            <label class="form-label">Choose stored email template</label>
+            <select id="outreachTemplateSelect" class="form-select"></select>
+          </div>
+          <div class="col-md-4">
+            <div class="outreach-template-count" id="outreachTemplateCount">0 templates</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outreach-pane mt-3">
+        <div class="outreach-step">Step 2: Finalize recipient</div>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-6">
+            <label class="form-label">Known recipient</label>
+            <select id="outreachKnownRecipient" class="form-select"></select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Or type recipient email</label>
+            <input id="outreachManualRecipient" class="form-control" placeholder="customer@example.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="outreach-pane mt-3">
+        <div class="outreach-step">Step 3: Review and send / create draft</div>
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Subject</label>
+            <input id="outreachSubject" class="form-control" placeholder="Subject">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Body</label>
+            <textarea id="outreachBody" class="form-control" rows="12" placeholder="Body"></textarea>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button id="btnOutreachReset" class="btn btn-outline-secondary">Reset</button>
+          <button id="btnOutreachSend" class="btn btn-primary">Send / Create Draft</button>
+        </div>
+
+        <div id="outreachActionStatus" class="small text-muted mt-3"></div>
+      </div>
+    </div>
+  </div>
+</section>

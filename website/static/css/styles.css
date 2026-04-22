@@ -1,0 +1,143 @@
+:root {
+  --app-bg: radial-gradient(circle at 12% 8%, #f7fbff 0%, #eef4ff 36%, #f4f8ff 100%);
+  --panel-bg: #ffffff;
+  --text-strong: #12263f;
+  --text-soft: #4a607a;
+  --brand: #1f6feb;
+  --brand-dark: #174ea6;
+  --brand-soft: rgba(31, 111, 235, 0.14);
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--text-strong);
+}
+
+main.container-fluid {
+  position: relative;
+}
+
+main.container-fluid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 14%, rgba(63, 129, 216, 0.1) 0%, transparent 38%),
+    radial-gradient(circle at 88% 16%, rgba(47, 150, 187, 0.08) 0%, transparent 36%),
+    radial-gradient(circle at 52% 96%, rgba(39, 102, 200, 0.08) 0%, transparent 42%);
+}
+
+.app-section {
+  position: relative;
+  z-index: 1;
+  animation: sectionIn 0.28s ease both;
+}
+
+.app-section .card {
+  backdrop-filter: blur(2px);
+}
+
+.app-topbar {
+  background: linear-gradient(90deg, #ffffff 0%, #f6faff 100%);
+}
+
+.top-nav-buttons {
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.top-nav-btn {
+  border: 1px solid rgba(23, 78, 166, 0.18);
+  background: #ffffff;
+  color: var(--brand-dark);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.top-nav-btn:hover,
+.top-nav-btn:focus-visible {
+  transform: translateY(-1px);
+  background: #eef5ff;
+  color: var(--brand-dark);
+  box-shadow: 0 8px 16px rgba(23, 78, 166, 0.14);
+}
+
+.top-nav-btn.active {
+  background: linear-gradient(180deg, #2a7be5 0%, #1f6feb 100%);
+  color: #ffffff;
+  border-color: #1f6feb;
+  box-shadow: 0 10px 20px rgba(31, 111, 235, 0.24);
+}
+
+.app-section .card {
+  border: 1px solid rgba(18, 38, 63, 0.08);
+  border-radius: 14px;
+}
+
+#notifBadge {
+  font-size: 0.68rem;
+}
+
+.notification-menu {
+  width: 420px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.notification-row {
+  border: 1px solid rgba(18, 38, 63, 0.1);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--panel-bg);
+}
+
+.notification-row .meta {
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+#leadsTable tbody tr:hover,
+#logsTable tbody tr:hover {
+  background: var(--brand-soft);
+}
+
+.metric-card {
+  border: 1px solid rgba(18, 38, 63, 0.08);
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+}
+
+.metric-card .metric-label {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metric-card .metric-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+pre.json-block {
+  background: #0f172a;
+  color: #d9e4f7;
+  border-radius: 10px;
+  padding: 12px;
+  max-height: 260px;
+  overflow: auto;
+}
+
+@keyframes sectionIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

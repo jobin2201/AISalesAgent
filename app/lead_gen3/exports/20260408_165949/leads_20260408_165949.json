@@ -1,0 +1,40 @@
+[
+  {
+    "company_name": "Kissflow",
+    "website": "https://kissflow.com/solutions/retail/",
+    "industry": "Retail",
+    "description": "A low-code platform for automating retail workflows and cutting costs.",
+    "signals_found": [
+      "manual campaign execution",
+      "Cost pressure signal",
+      "poor follow-up consistency",
+      "Cost pressure signal"
+    ],
+    "decision_makers_found": [
+      "Sales Head",
+      "Founder",
+      "CEO"
+    ],
+    "source_url": "https://kissflow.com/solutions/retail/",
+    "emails_found": [
+      "sales@kissflow.com"
+    ],
+    "linkedin_urls": [
+      "https://www.linkedin.com/company/kissflow"
+    ],
+    "job_titles_found": [
+      "See How You Can Achieve 450% ROI in 2.8 Months"
+    ],
+    "exec_contacts": [],
+    "draft_email_subject": "Kissflow, How Consistency Affects Customer Experience",
+    "draft_email_body": "Hi {Decision Maker}, \nI've been following Kissflow's mission to simplify retail workflows. Our analysis shows inconsistent follow-up is a common pain point for your team, impacting customer experience. \nAt DigiDelight, we've seen organizations struggle with manual campaign execution, leading to missed opportunities and increased costs. This is where our AI-powered platform, DigiCom, can help. With DigiCom, you can automate and personalize multi-channel interactions, reducing the burden on your team and enhancing customer engagement. \nBy leveraging our built-in automation flows, AI-driven insights, and detailed engagement logs, you can deliver scalable and data-driven communication experiences that drive loyalty and revenue growth. I'd love to explore how DigiCom can address your specific needs and challenges. Are you available for a quick 15-minute call to discuss further?",
+    "signal_strength": 8,
+    "industry_fit": 10,
+    "size_fit": 6,
+    "engagement_score": 8,
+    "total_score": 81.0,
+    "priority": "HIGH",
+    "recommended_action": "Immediate outreach — personalized email + LinkedIn",
+    "scraped_at": "2026-04-08T16:49:04.120628"
+  }
+]

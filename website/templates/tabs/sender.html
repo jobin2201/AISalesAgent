@@ -1,0 +1,135 @@
+<section id="senderSection" class="app-section d-none">
+  <div class="card shadow-sm sender-shell-card">
+    <div class="card-body sender-shell-body">
+      <div class="sender-hero mb-3">
+        <p class="sender-kicker mb-1">Sender Mailbox Reply</p>
+        <h5 class="sender-title mb-1">Track threads quickly, answer with confidence</h5>
+        <p class="sender-subtitle mb-0">Review inbound context and create polished sender drafts in one organized workspace.</p>
+      </div>
+
+      <div class="sender-meta-grid mb-3">
+        <div class="sender-meta-card">
+          <div class="sender-meta-label">Sender Mailbox</div>
+          <div id="senderMetaSender" class="sender-meta-value">-</div>
+        </div>
+        <div class="sender-meta-card">
+          <div class="sender-meta-label">Customer Mailbox</div>
+          <div id="senderMetaCustomer" class="sender-meta-value">-</div>
+        </div>
+        <div class="sender-meta-card">
+          <div class="sender-meta-label">Lead</div>
+          <div id="senderMetaLead" class="sender-meta-value">-</div>
+        </div>
+      </div>
+
+      <div class="sender-pane mb-3">
+        <div class="sender-step">Step 1: Pick a customer thread</div>
+        <div class="sender-flow-note mb-2">Start a new conversation thread from Sender Outreach. Use this Sender Replies tab only to continue existing threads.</div>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-8">
+            <label class="form-label">Choose customer conversation</label>
+            <select id="senderConversationSelect" class="form-select"></select>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <button id="btnSenderRefreshInbox" class="btn btn-outline-primary">Refresh sender inbox</button>
+          </div>
+        </div>
+        <p id="senderTrackedParticipants" class="sender-caption mt-2 mb-0">Tracked participants: -</p>
+
+        <div class="sender-thread-summary mt-3">
+          <div class="sender-meta-grid mb-2">
+            <div class="sender-meta-card">
+              <div class="sender-meta-label">Participant</div>
+              <div id="senderSummaryParticipant" class="sender-meta-value">-</div>
+            </div>
+            <div class="sender-meta-card">
+              <div class="sender-meta-label">Meeting State</div>
+              <div id="senderSummaryMeetingState" class="sender-meta-value">-</div>
+            </div>
+            <div class="sender-meta-card">
+              <div class="sender-meta-label">Current Meeting Contact</div>
+              <div id="senderSummaryMeetingContact" class="sender-meta-value">-</div>
+            </div>
+          </div>
+          <div id="senderSummaryThreadId" class="sender-thread-chip">Thread ID: -</div>
+        </div>
+
+        <input id="senderParticipant" type="hidden">
+        <input id="senderThreadId" type="hidden">
+      </div>
+
+      <div class="sender-pane mb-3">
+        <div class="sender-step">Step 2: Review conversation context</div>
+        <ul class="nav nav-tabs sender-context-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#senderLatestTab" type="button" role="tab">Latest customer message</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#senderPreviousTab" type="button" role="tab">Last sent sender draft</button>
+          </li>
+        </ul>
+        <div class="tab-content pt-3">
+          <div class="tab-pane fade show active" id="senderLatestTab" role="tabpanel">
+            <div class="sender-context-grid">
+              <div><span class="ctx-label">From</span><span id="senderCtxFrom" class="ctx-value">-</span></div>
+              <div><span class="ctx-label">Subject</span><span id="senderCtxSubject" class="ctx-value">-</span></div>
+            </div>
+            <label class="form-label mt-2">Inbound message</label>
+            <textarea id="senderCustomerText" class="form-control sender-message-preview" rows="8" readonly></textarea>
+          </div>
+          <div class="tab-pane fade" id="senderPreviousTab" role="tabpanel">
+            <div class="sender-context-grid">
+              <div><span class="ctx-label">Subject</span><span id="senderPrevSubject" class="ctx-value">-</span></div>
+            </div>
+            <label class="form-label mt-2">Previous sender draft</label>
+            <textarea id="senderPreviousDraft" class="form-control sender-message-preview" rows="8" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="sender-pane mb-3">
+        <div class="sender-step">Step 3: Compose the next sender reply</div>
+        <div class="d-flex flex-wrap gap-3 mb-2 sender-mode-wrap">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="senderReplyMode" id="senderModeGuided" value="guided" checked>
+            <label class="form-check-label" for="senderModeGuided">NLP-guided reply</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="senderReplyMode" id="senderModeManual" value="manual">
+            <label class="form-check-label" for="senderModeManual">Manual reply</label>
+          </div>
+        </div>
+
+        <div id="senderPlanHint" class="sender-flow-description mb-3">Generate suggestion to view detected intent/action.</div>
+
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button id="btnGenerateSenderPlan" class="btn btn-primary">Generate Suggestion</button>
+          <button id="btnSenderResetSuggestion" class="btn btn-outline-secondary">Reset sender suggestion</button>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Reply subject</label>
+            <input id="senderReplySubject" class="form-control" placeholder="Re: ...">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Reply body</label>
+            <textarea id="senderReplyBody" class="form-control" rows="10"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Plan JSON</label>
+            <textarea id="senderPlanJson" class="form-control" rows="7" spellcheck="false"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="sender-pane">
+        <div class="sender-step">Step 4: Create draft in sender mailbox</div>
+        <div class="d-flex flex-wrap gap-2">
+          <button id="btnApplySenderPlan" class="btn btn-success">Draft in Sender Gmail</button>
+        </div>
+        <div class="mt-3"><div id="senderActionStatus" class="small text-muted"></div></div>
+      </div>
+    </div>
+  </div>
+</section>

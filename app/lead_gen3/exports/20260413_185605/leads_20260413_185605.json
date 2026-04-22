@@ -1,0 +1,51 @@
+[
+  {
+    "company_name": "Karix",
+    "website": "https://www.karix.com/industry-solutions/bfsi",
+    "industry": "BFSI",
+    "description": "Karix provides AI-powered engagement solutions for BFSI industry, delivering higher conversions, lower costs, and customer trust.",
+    "signals_found": [
+      "poor follow-up consistency",
+      "campaign management inefficiencies",
+      "disconnected customer messaging"
+    ],
+    "decision_makers_found": [],
+    "source_url": "https://www.karix.com/industry-solutions/bfsi",
+    "emails_found": [
+      "marketing@karix.com",
+      "tech-support@karix.com",
+      "dpo@karix.com"
+    ],
+    "linkedin_urls": [
+      "https://www.linkedin.com/company/karix"
+    ],
+    "job_titles_found": [],
+    "exec_contacts": [
+      {
+        "name": "Omnichannel Messaging Suite",
+        "title": "Manager",
+        "email": "marketing@karix.com"
+      },
+      {
+        "name": "ing Suite\nWhatsApp",
+        "title": "Manager",
+        "email": "tech-support@karix.com"
+      },
+      {
+        "name": "Conversational Suite\nCampaign",
+        "title": "Manager",
+        "email": "dpo@karix.com"
+      }
+    ],
+    "draft_email_subject": "Karix, Closing Gaps in Customer Conversations?",
+    "draft_email_body": "Hi there, \nI came across Karix's impressive work in the BFSI space, particularly in AI-powered engagement solutions. However, I noticed that Karix's customer communication may be hindered by poor follow-up consistency and disconnected messaging. This can lead to inefficiencies in campaign management and ultimately affect customer trust.\n\nDigiCom's intelligent customer communication platform can help bridge these gaps. Our platform enables businesses to manage multi-channel messaging, automate workflows, and create personalized customer journeys. With DigiCom, Karix can scale its customer communication operations, reduce costs, and increase conversions.\n\nI'd love to understand more about Karix's current customer communication challenges and how DigiCom can help address them. Would you be open to a 15-minute call to discuss this further?",
+    "signal_strength": 6,
+    "industry_fit": 10,
+    "size_fit": 8,
+    "engagement_score": 7,
+    "total_score": 76.5,
+    "priority": "HIGH",
+    "recommended_action": "Immediate outreach — personalized email + LinkedIn",
+    "scraped_at": "2026-04-13T18:42:29.376865"
+  }
+]
