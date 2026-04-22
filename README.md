@@ -7,7 +7,9 @@ An end-to-end autonomous sales ecosystem designed to ingest leads, score them ba
 The AI Sales Agent acts as a digital SDR (Sales Development Representative), automating the "top of the funnel." It connects to MongoDB to track lead lifecycles and provides a Streamlit-based dashboard for human oversight.
 
 ---
-<img width="1884" height="898" alt="image" src="https://github.com/user-attachments/assets/1f04dca3-4a78-455a-8c18-8c4a8ad6c1fe" />
+<img width="1583" height="876" alt="1 1" src="https://github.com/user-attachments/assets/54154683-00c3-4311-8022-8e6f7ba97354" />
+
+
 
 
 ## 🛠 Architecture & File Structure
@@ -91,6 +93,8 @@ powershell -ExecutionPolicy Bypass -File "F:/WORK/sales_ai_agent/salesagent/tool
 Once the app is running, open [http://127.0.0.1:8501](http://127.0.0.1:8501) in your browser.
 
 ### Step 1 — Sidebar: Authorize accounts
+<img width="1915" height="870" alt="1" src="https://github.com/user-attachments/assets/73ec6082-6cc3-409b-9bf8-b811b8f44317" />
+<br>
 
 Before using any tab, complete authorization in the **sidebar**:
 
@@ -103,12 +107,26 @@ Before using any tab, complete authorization in the **sidebar**:
 > Both reply-account buttons must be authorized for the full threaded reply workflow to function correctly.
 
 ### Step 2 — Sidebar: Select filters
+<img width="1911" height="830" alt="3" src="https://github.com/user-attachments/assets/eaef4dc0-77d5-40df-9a4f-5ef9b88de000" />
+<br>
 
 1. **Product Description** — choose the product to filter leads against *(currently 2 products: `DigiCom`, `DigiExpense`)*
 2. **Priority** — filter leads by `HIGH`, `MEDIUM`, or `LOW`
 3. **Minimum Score** — set a lead quality threshold
 4. **Company Search** *(optional)* — search by company name
 5. **Choose Lead** — pick a lead from the filtered list; summary, recipients, and templates load automatically
+
+**SMS Reminders Subsystem**
+A new SMS reminder workflow is now active via `sms_reminders.py`:
+
+| Feature | Detail |
+|---------|--------|
+| Send SMS on meeting booked | Toggle in sidebar |
+| Follow-up reminders | Toggle in sidebar |
+| Reminder phone input | Recipient number for SMS |
+| Twilio diagnostics | Readiness check panel |
+| Test SMS button | Fires a test message to verify Twilio config |
+| Runtime counters | Tracks sent, failed, and pending reminders |
 
 ---
 
@@ -120,8 +138,8 @@ Displays full company details, ICP fit summary, intent signals, and lead context
 ---
 
 #### 📤 Sender Outreach — Email Workspace
-<img width="1501" height="812" alt="image" src="https://github.com/user-attachments/assets/6189cac5-6afe-4a3f-b7b0-7101beda1d51" />
-
+<img width="1575" height="803" alt="4" src="https://github.com/user-attachments/assets/12953021-1b59-4720-9a73-380fe1bb9ab5" />
+<br>
 This tab handles the first outbound message and any proactive follow-ups from sender to a lead contact.
 
 | Field / Control | What it does |
@@ -147,8 +165,8 @@ Guardrails (`pre_send_check`) run first, then behaviour depends on mode:
 ---
 
 #### 💬 Customer Reply — Customer Reply Workspace
-<img width="1474" height="847" alt="image" src="https://github.com/user-attachments/assets/c0e50bba-3cf3-4d34-bb91-8efae5acde0d" />
-
+<img width="1629" height="866" alt="5" src="https://github.com/user-attachments/assets/26e68bc9-eac3-47c9-8b8d-720cd30d0763" />
+<br>
 This tab simulates or manages the customer-side response to the latest sender message.
 
 **Header context blocks** at the top confirm: sender mailbox, customer mailbox, and active lead. Verify these before drafting.
@@ -169,8 +187,6 @@ This tab simulates or manages the customer-side response to the latest sender me
 ---
 
 #### 📥 Sender Replies — Sender Reply Workspace
-<img width="1433" height="810" alt="image" src="https://github.com/user-attachments/assets/e919ccbc-057d-4090-9109-800cf23d8fa6" />
-
 This tab handles sender responses to inbound customer messages already received in the sender inbox.
 
 **Header context blocks** confirm: sender mailbox, customer mailbox, and active lead.
@@ -198,17 +214,16 @@ This tab handles sender responses to inbound customer messages already received 
 | **Scheduling action detected** | Shows `book_slot` when the parser detects a bookable scheduling intent in the customer reply. |
 | **Reply subject / body** | Editable even in guided mode — always review before drafting. |
 | **Current sender calendar availability** | Live slot panel — verify open slots before finalising the draft. |
-<img width="709" height="455" alt="image" src="https://github.com/user-attachments/assets/36c6630b-0ad0-4ce2-8356-94a795e7bb15" />
+<img width="1490" height="382" alt="image" src="https://github.com/user-attachments/assets/6d6e27cd-590e-43fd-81fc-859d5c85105c" />
+<br>
 
 
 **On clicking Draft in Sender Gmail:** the system applies the sender plan — if a scheduling action exists, it may create/update/cancel a calendar event first, then creates a threaded draft in the sender Gmail inbox. You send it manually from Gmail.
 
 ---
 
-#### 🔔 Notifications & Message Log — Bottom Panels
-<img width="1501" height="549" alt="image" src="https://github.com/user-attachments/assets/07f923bc-46eb-4d9b-9efd-4433176abc60" />
-
-These panels sit at the bottom of the dashboard and provide operational visibility across all tabs.
+#### 🔔 Notifications & Message Log 
+The message log sits at the bottom of the dashboard and provides operational visibility across all tabs.
 
 **Notifications**
 
@@ -250,9 +265,9 @@ Sender Replies   →  draft response from sender Gmail  →  send manually
 - Recipient addresses are resolved from the selected conversation participant, not entered manually.
 
 ---
-
 ## ⚡ How Email & Calendar Booking Works (Internals)
-<img width="1532" height="748" alt="image" src="https://github.com/user-attachments/assets/de891ab9-785e-4b25-bc89-5ce09678bda4" />
+<img width="1548" height="683" alt="6" src="https://github.com/user-attachments/assets/3a756cf4-7b46-4313-bcf3-e9d2abb4bc9e" />
+<br>
 
 ### Email flow
 
@@ -341,72 +356,3 @@ The **Authorize Sender Inbox + Calendar** button must be clicked because booking
 | `calendar.readonly` + write | Fetching available slots, creating/updating calendar invites |
 
 ---
-
-## 🗺 Roadmap & Progress
-
-### ✅ Phase 1: Core Foundation *(Current)*
-
-- Lead ingestion via CRM triggers and basic scoring
-- Automated email outreach with template support
-- Multi-tab Streamlit UI for lead and reply monitoring
-- MongoDB integration for state management
-
-### 🏗 Phase 2: Intelligence Upgrade *(In Progress)*
-
-- Signal detection via job board signals and company news
-- Autonomous objection handling and AI response generation
-- LinkedIn integration for expanded social outreach
-
-### 🔮 Phase 3 & 4: Advanced Autonomy
-
-- Vector memory via Pinecone/Weaviate for long-term pattern learning
-- RLHF loop — "Rep Feedback" system for human-rated AI briefings
-- Multi-channel support: WhatsApp and SMS integration
-
----
-
-## ⚙️ Configuration
-
-The system uses `start_localxpose_tunnel.ps1` to manage connectivity. Create a `.env` file in the `salesagent/` root by copying `.env.example` and filling in your values:
-
-```env
-# ── Database ───────────────────────────────────────────────
-MONGODB_URI=mongodb://localhost:27017
-MONGODB_DB=ai_sales_agent
-
-# ── Streamlit ──────────────────────────────────────────────
-STREAMLIT_APP_TITLE=AI Sales Agent Dashboard
-
-# ── SendGrid ──────────────────────────────────────────────
-SENDGRID_API_KEY=your_sendgrid_api_key
-SENDGRID_ENABLED=true
-SENDGRID_FROM_EMAIL=your_sender@email.com
-
-# ── Gmail (OAuth) ─────────────────────────────────────────
-EMAIL_SEND_MODE=gmail_draft
-GMAIL_OAUTH_CLIENT_SECRET_PATH=path/to/gmail_client_secret.json
-GMAIL_OAUTH_TOKEN_PATH=path/to/gmail_token.json
-GMAIL_DRAFT_FROM_EMAIL=your_sender@gmail.com
-AUTO_REPLY_CUSTOMER_EMAIL=your_customer@gmail.com
-GMAIL_LOOP_SENDER_TOKEN_PATH=path/to/gmail_sender_loop_token.json
-GMAIL_LOOP_CUSTOMER_TOKEN_PATH=path/to/gmail_customer_token.json
-
-# ── Sender / Calendar settings ────────────────────────────
-SENDER_TIMEZONE=Asia/Kolkata
-SENDER_LOOP_SCOPES=https://www.googleapis.com/auth/gmail.modify,https://www.googleapis.com/auth/gmail.compose,https://www.googleapis.com/auth/calendar.readonly
-GOOGLE_CALENDAR_ID=primary
-CALENDAR_LOOKAHEAD_DAYS=7
-CALENDAR_WORKDAY_START_HOUR=9
-CALENDAR_WORKDAY_END_HOUR=18
-CALENDAR_MIN_SLOT_MINUTES=30
-
-# ── LLM (Groq) ────────────────────────────────────────────
-GROQ_API_KEY=your_groq_api_key
-GROQ_BASE_URL=https://api.groq.com/openai/v1
-GROQ_MODEL=llama-3.1-8b-instant
-
-# ── Tunneling ─────────────────────────────────────────────
-LOCALXPOSE_ACCESS_TOKEN=your_localxpose_token
-```
-
-
