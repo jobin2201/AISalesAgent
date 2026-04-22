@@ -68,7 +68,7 @@ from app.mainapp2_support import (
 from app.services.email_service import ensure_gmail_oauth
 
 
-APP_TITLE = os.getenv("STREAMLIT_APP_TITLE", "AI Sales Agent Dashboard") + " 2"
+APP_TITLE = os.getenv("STREAMLIT_APP_TITLE", "Lead Management Console")
 FROM_EMAIL = (os.getenv("GMAIL_DRAFT_FROM_EMAIL") or os.getenv("SENDGRID_FROM_EMAIL") or "").strip()
 CC_EMAIL = (os.getenv("AUTO_REPLY_CUSTOMER_EMAIL") or "").strip()
 
